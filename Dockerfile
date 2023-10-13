@@ -1,5 +1,7 @@
-FROM
+FROM jupyter/scipy-notebook
 
-COPY
+COPY /requirements.txt /
 
-RUN
+RUN pip install /requirements.txt
+
+CMD ["start-notebook.sh", "--NotebookApp.base_url=/jupyter"]
